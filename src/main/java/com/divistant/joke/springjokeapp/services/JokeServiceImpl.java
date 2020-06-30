@@ -8,14 +8,18 @@ public class JokeServiceImpl implements JokeService {
 
     private final ChuckNorrisQuotes chuckNorrisQuotes;
 
+    public JokeServiceImpl(ChuckNorrisQuotes chuckNorrisQuotes) {
+        this.chuckNorrisQuotes = chuckNorrisQuotes;
+    }
+
     /**
      * Tidak melakukan injection dikarenakan
      * Class ChuckNorrisQuotes merupakan Class
      * dari luar yang tidak di atur oleh Spring.
      */
-    public JokeServiceImpl() {
-        this.chuckNorrisQuotes = new ChuckNorrisQuotes();
-    }
+//    public JokeServiceImpl() {
+//        this.chuckNorrisQuotes = new ChuckNorrisQuotes();
+//    }
 
     @Override
     public String getJoke() {
